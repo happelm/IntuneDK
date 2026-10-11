@@ -9,7 +9,7 @@ lab:
 
 **Estimated time:** 30 minutes
 
-> **New:** This lab has not been run in this environment yet. If a step behaves differently, tell the trainer.
+> **Draft:** This lab is new and has not been run in this environment yet. If a step behaves differently, tell the trainer.
 
 **Goal:** Package Greenshot and its runtime yourself, deploy both as Win32 apps with a dependency and follow the order in the log.
 

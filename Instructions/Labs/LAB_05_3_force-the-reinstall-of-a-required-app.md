@@ -9,7 +9,7 @@ lab:
 
 **Estimated time:** 25 minutes
 
-> **New:** This lab has not been run in this environment yet. If a step behaves differently, tell the trainer.
+> **Draft:** This lab is new and has not been run in this environment yet. If a step behaves differently, tell the trainer.
 
 **Goal:** Give the helpdesk a way to reinstall a required Win32 app on one device – with a remediation that runs on demand.
 
@@ -26,7 +26,7 @@ lab:
    | Run script in 64-bit PowerShell | Yes |
 
 4. On the Assignments page select **no group**. The remediation runs on demand only.
-5. Intune admin center → Devices → Windows → `CL3-yourname` → … → **Run remediation** → `etcX-Reinstall-CMTrace`.
+5. Intune admin center → Devices → All devices → `CL3-yourname` → … → **Run remediation** → `etcX-Reinstall-CMTrace`.
 6. CL3: follow `HealthScripts.log` in `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs`: the detection script exits with `1`, the remediation runs, `CMTrace.exe` is gone.
 7. About three minutes later the IME restarts. Follow `AppWorkload.log`: `etcX-CMTrace` is not detected, the install command runs, detection succeeds.
 8. Check the date of `C:\Windows\CMTrace.exe` again and the install status in the Intune admin center.

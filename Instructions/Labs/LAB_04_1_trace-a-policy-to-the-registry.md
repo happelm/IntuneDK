@@ -38,4 +38,4 @@ lab:
 
 **Note:** Config Refresh is a setting of the MDM client itself (DMClient CSP), not a Policy CSP setting – you will not find it under `PolicyManager`. `Hide Recently Added Apps` only changes the Start menu after a restart; the registry value is there right after the sync.
 
-**Why:** The sync status in the portal is a service view. The registry shows what the device actually applied. `PolicyManager\providers\<GUID>\default\Device\<area>` holds the values Intune sent – the GUID is your enrollment GUID from Lab 3.1. `PolicyManager\current\device` holds the merged result that Windows applies.
+**Why:** The sync status in the portal is a service view. The registry shows what the device actually applied. `PolicyManager\providers\<GUID>\default\Device\<area>` holds the values Intune sent – the GUID is one of your two enrollment GUIDs from Lab 3.1. `PolicyManager\current\device` holds the merged result that Windows applies.

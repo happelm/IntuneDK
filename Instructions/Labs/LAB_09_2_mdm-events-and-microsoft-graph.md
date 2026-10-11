@@ -9,7 +9,7 @@ lab:
 
 **Estimated time:** 30 minutes
 
-> **New:** This lab has not been run in this environment yet. If a step behaves differently, tell the trainer.
+> **Draft:** This lab is new and has not been run in this environment yet. If a step behaves differently, tell the trainer.
 
 **Goal:** Find MDM errors on the device without scrolling through thousands of events, and read and sync your devices through Microsoft Graph instead of the portal.
 

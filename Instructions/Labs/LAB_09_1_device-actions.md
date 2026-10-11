@@ -9,13 +9,13 @@ lab:
 
 **Estimated time:** 20 minutes, plus the reset of CL4 in the background
 
-> **New:** This lab has not been run in this environment yet. If a step behaves differently, tell the trainer.
+> **Draft:** This lab is new and has not been run in this environment yet. If a step behaves differently, tell the trainer.
 
 > **Careful:** Your role reaches the lab devices of every participant. Check the device name twice before you click – a wipe cannot be undone.
 
 **Goal:** Know which device action does what, and wipe and re-provision CL4 yourself.
 
-1. Intune admin center → Devices → Windows → `CL4-yourname`: list every action the device page offers (top bar and the … menu). For each one, write down in one line what it does and whether the device stays enrolled. Use the slides and the Learn page [Device actions](https://learn.microsoft.com/en-us/intune/device-management/actions/).
+1. Intune admin center → Devices → All devices → `CL4-yourname`: list every action the device page offers (top bar and the … menu). For each one, write down in one line what it does and whether the device stays enrolled. Use the slides and the Learn page [Device actions](https://learn.microsoft.com/en-us/intune/device-management/actions/).
 2. Compare your list with your neighbor. Which action is missing because CL4 is not registered in Windows Autopilot?
 3. Wait for the trainer's signal, then: `CL4-yourname` → **Wipe**. Leave both options cleared (do not keep enrollment state and user account), confirm.
 4. Sync CL4 once so that it picks up the wipe. The reset takes a while – continue with the next lab and come back.

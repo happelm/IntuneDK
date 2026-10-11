@@ -9,7 +9,7 @@ lab:
 
 **Estimated time:** 45 minutes
 
-**Goal:** Sign in with Windows Hello and reach on-premises and Azure Files resources without a password prompt.
+**Goal:** Sign in with Windows Hello and reach on-premises resources – and optionally Azure Files – without a password prompt.
 
 1. CL4: sign out and sign in again with the Windows Hello PIN you set up in Lab 0.1.
 2. CL4: check the SSO state.
@@ -25,13 +25,13 @@ lab:
    klist
    ```
 
-5. CL4: connect to the Azure file share provided by the trainer.
+5. **Optional:** if the trainer provides an Azure file share, connect to it from CL4.
 
 ### Checkpoint
 
 - [ ] `dsregcmd /status`, section SSO State: `AzureAdPrt`, `CloudTgt` and `OnPremTgt` are `YES`
 - [ ] DC1 share opens without a password prompt, `klist` shows a ticket for DC1
-- [ ] Azure file share opens without a password prompt
+- [ ] Optional: Azure file share opens without a password prompt
 
 **Note:** Microsoft Entra Kerberos and Windows Hello for Business are already enabled in the training tenant. `CloudTgt` is the cloud Kerberos ticket for cloud resources, `OnPremTgt` the one for on-premises resources.
 

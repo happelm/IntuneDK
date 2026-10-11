@@ -9,7 +9,7 @@ lab:
 
 **Estimated time:** 20 minutes
 
-> **New:** This lab has not been run in this environment yet. If a step behaves differently, tell the trainer.
+> **Draft:** This lab is new and has not been run in this environment yet. If a step behaves differently, tell the trainer.
 
 **Goal:** Detect and fix a client setting automatically – on a schedule and on demand – and read the result in the portal.
 
@@ -31,7 +31,7 @@ lab:
    | Run script in 64-bit PowerShell | Yes |
 
 4. Assign it to `studentXdevices`, schedule **Hourly**.
-5. Do not wait for the schedule: Intune admin center → Devices → Windows → `CL4-yourname` → … → **Run remediation** → `etcX-RemoteRegistry`.
+5. Do not wait for the schedule: Intune admin center → Devices → All devices → `CL4-yourname` → … → **Run remediation** → `etcX-RemoteRegistry`.
 6. CL4: check the service and follow `HealthScripts.log` in `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs`.
 
    ```powershell

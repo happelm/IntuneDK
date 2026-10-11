@@ -27,8 +27,8 @@ Replacing GPOs with configuration profiles, conflict resolution between Configur
 |---|---|---|
 | 4.1 | [Trace a policy to the registry](Instructions/Labs/LAB_04_1_trace-a-policy-to-the-registry.html) | 30 min |
 | 5.1 | [Trace a Win32 app](Instructions/Labs/LAB_05_1_trace-a-win32-app.html) | 45 min |
-| 5.2 | [Package an app with a dependency](Instructions/Labs/LAB_05_2_package-an-app-with-a-dependency.html) | 30 min |
-| 5.3 | [Force the reinstall of a required app](Instructions/Labs/LAB_05_3_force-the-reinstall-of-a-required-app.html) | 25 min |
+| 5.2 | [Package an app with a dependency](Instructions/Labs/LAB_05_2_package-an-app-with-a-dependency.html) (draft) | 30 min |
+| 5.3 | [Force the reinstall of a required app](Instructions/Labs/LAB_05_3_force-the-reinstall-of-a-required-app.html) (draft) | 25 min |
 
 ### Day 3 – Operations, troubleshooting, automation
 
@@ -37,12 +37,12 @@ Device actions: Wipe, Retire, Fresh Start, Autopilot Reset. Diagnostic logs, MDM
 | Lab | Title | Time |
 |---|---|---|
 | 6.1 | [Trace a platform script](Instructions/Labs/LAB_06_1_trace-a-platform-script.html) | 30 min |
-| 6.2 | [Turn a client problem into a remediation](Instructions/Labs/LAB_06_2_turn-a-client-problem-into-a-remediation.html) | 20 min |
+| 6.2 | [Turn a client problem into a remediation](Instructions/Labs/LAB_06_2_turn-a-client-problem-into-a-remediation.html) (draft) | 20 min |
 | 7.1 | [Trace a compliance block](Instructions/Labs/LAB_07_1_trace-a-compliance-block.html) | 30 min |
 | 8.1 | [Windows Hello and cloud Kerberos](Instructions/Labs/LAB_08_1_windows-hello-and-cloud-kerberos.html) | 45 min (optional) |
-| 9.1 | [Device actions](Instructions/Labs/LAB_09_1_device-actions.html) | 20 min |
-| 9.2 | [MDM events and Microsoft Graph](Instructions/Labs/LAB_09_2_mdm-events-and-microsoft-graph.html) | 30 min |
-| 10.1 | [Spot the difference](Instructions/Labs/LAB_10_1_spot-the-difference.html) | 30 min |
+| 9.1 | [Device actions](Instructions/Labs/LAB_09_1_device-actions.html) (draft) | 20 min |
+| 9.2 | [MDM events and Microsoft Graph](Instructions/Labs/LAB_09_2_mdm-events-and-microsoft-graph.html) (draft) | 30 min |
+| 10.1 | [Partner breaks, you fix](Instructions/Labs/LAB_10_1_partner-breaks-you-fix.html) (draft) | 30 min |
 
 ### Appendix
 

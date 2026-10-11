@@ -9,8 +9,6 @@ lab:
 
 **Estimated time:** 30 minutes
 
-> **New:** The remediation part of this lab has not been run in a class yet. If a step behaves differently, tell the trainer.
-
 **Goal:** Follow a platform script and a remediation from the assignment to the result on CL3.
 
 1. Intune admin center → Devices → Scripts and remediations → Platform scripts → Add → Windows 10 and later: platform script `etcX-Folder` with `createtestfolder.ps1` from the [Labfiles](https://github.com/happelm/MDDMI-Doka/tree/main/Labfiles), assigned to `studentXdevices`:

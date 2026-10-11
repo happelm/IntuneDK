@@ -9,8 +9,6 @@ lab:
 
 **Estimated time:** 30 minutes
 
-> **New:** This lab has not been run in a class yet. If a step behaves differently, tell the trainer.
-
 **Goal:** Make CL3 noncompliant on purpose and see what the user sees – then repair it. The trainer shows the same block in the sign-in log.
 
 1. CL3: run `ver` and note the OS version.
