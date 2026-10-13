@@ -2,7 +2,6 @@
 
 Lab instructions for the three-day Intune operations and troubleshooting workshop, 2nd level focus.
 
-- **Read online:** <https://happelm.github.io/IntuneDK/>
 
 ## Labs
 
