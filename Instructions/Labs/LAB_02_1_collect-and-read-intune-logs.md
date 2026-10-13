@@ -13,7 +13,7 @@ lab:
 
 1. Intune admin center → Devices → All devices → `CL3-yourname` → **Collect diagnostics**. Then sync CL3. The package arrives in about 15 minutes – continue with the next steps meanwhile.
 2. CL3: Settings → Accounts → Access work or school → **Export your management log files**. Open the report from `C:\Users\Public\Documents\MDMDiagnostics`.
-3. CL4, elevated command prompt: create the diagnostics package from the command line and compare it with the report from step 2.
+3. CL3, elevated command prompt: create the diagnostics package from the command line and compare it with the report from step 2.
 
    ```cmd
    mdmdiagnosticstool.exe -area "DeviceEnrollment;DeviceProvisioning;Autopilot" -zip "C:\Users\Public\Documents\MDMDiagReport.zip"
