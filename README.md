@@ -38,7 +38,6 @@ Device actions: Wipe, Retire, Fresh Start, Autopilot Reset. Diagnostic logs, MDM
 | 8.1 | [Windows Hello and cloud Kerberos](Instructions/Labs/LAB_08_1_windows-hello-and-cloud-kerberos.md) | 45 min (optional) |
 | 9.1 | [Device actions](Instructions/Labs/LAB_09_1_device-actions.md) (draft) | 20 min |
 | 9.2 | [MDM events and Microsoft Graph](Instructions/Labs/LAB_09_2_mdm-events-and-microsoft-graph.md) (draft) | 30 min |
-| 10.1 | [Partner breaks, you fix](Instructions/Labs/LAB_10_1_partner-breaks-you-fix.md) (draft) | 30 min |
 
 ### Appendix
 
@@ -92,7 +91,7 @@ Not for you: roles, scope tags, tenant settings, Conditional Access. Assignment 
 
 - CMTrace for all .log files – from `\\dc1\labfiles` in Lab 2.1, deployed by Intune in Lab 5.1. Intune Management Extension logs in `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs`
 - Intune admin center: intune.microsoft.com · Entra admin center: entra.microsoft.com
-- Lab files: [Labfiles folder in this repository](https://github.com/happelm/MDDMI-Doka/tree/main/Labfiles)
+- Lab files: [Labfiles folder in this repository](https://github.com/happelm/IntuneDK/tree/main/Labfiles)
 
 ## Known issues and feedback
 
