@@ -28,7 +28,7 @@ Replacing GPOs with configuration profiles, conflict resolution between Configur
 
 ### Day 3 – Operations, troubleshooting, automation
 
-Device actions: Wipe, Retire, Fresh Start, Autopilot Reset. Diagnostic logs, MDM events and Microsoft Graph. Remediations. Q&A and cases from your own environment.
+Device actions: Wipe, Retire, Fresh Start, Autopilot Reset. Diagnostic logs, MDM events, Microsoft Graph and software reports. Remediations. Q&A and cases from your own environment.
 
 | Lab | Title | Time |
 |---|---|---|
@@ -38,6 +38,7 @@ Device actions: Wipe, Retire, Fresh Start, Autopilot Reset. Diagnostic logs, MDM
 | 8.1 | [Windows Hello and cloud Kerberos](Instructions/Labs/LAB_08_1_windows-hello-and-cloud-kerberos.md) | 45 min (optional) |
 | 9.1 | [Device actions](Instructions/Labs/LAB_09_1_device-actions.md) (draft) | 20 min |
 | 9.2 | [MDM events and Microsoft Graph](Instructions/Labs/LAB_09_2_mdm-events-and-microsoft-graph.md) (draft) | 30 min |
+| 9.3 | [Build a software report with Graph](Instructions/Labs/LAB_09_3_build-a-software-report-with-graph.md) (draft) | 30 min |
 
 ### Appendix
 
