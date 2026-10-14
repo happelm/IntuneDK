@@ -28,26 +28,52 @@ lab:
 
 ### Part B – Microsoft Graph
 
-6. Open Graph Explorer (`https://aka.ms/ge`) and sign in with your user `etcX`.
-7. List the managed devices you can see:
+6. Open Graph Explorer (`https://aka.ms/ge`) and sign in with your user `etcX`. The method (GET, POST, …) is a drop-down left of the URL box: set it there, and paste only the URL from the code blocks below.
+7. Method **GET** – list the managed devices you can see:
 
    ```text
-   GET https://graph.microsoft.com/v1.0/deviceManagement/managedDevices?$select=id,deviceName,lastSyncDateTime,complianceState,osVersion
+   https://graph.microsoft.com/v1.0/deviceManagement/managedDevices?$select=id,deviceName,lastSyncDateTime,complianceState,osVersion
    ```
 
-8. Find `CL3-yourname` in the result and copy its `id`. Read the device alone:
+8. Find `CL3-yourname` in the result and copy its `id`. Method **GET** – read the device alone (replace `{id}`):
 
    ```text
-   GET https://graph.microsoft.com/v1.0/deviceManagement/managedDevices/{id}
+   https://graph.microsoft.com/v1.0/deviceManagement/managedDevices/{id}
    ```
 
-9. Trigger a sync of CL3 through Graph (request body empty), then compare `lastSyncDateTime` with the device page in the Intune admin center a few minutes later:
+9. Method **POST**, request body empty – trigger a sync of CL3, then compare `lastSyncDateTime` with the device page in the Intune admin center a few minutes later:
 
    ```text
-   POST https://graph.microsoft.com/v1.0/deviceManagement/managedDevices/{id}/syncDevice
+   https://graph.microsoft.com/v1.0/deviceManagement/managedDevices/{id}/syncDevice
    ```
 
-10. **Optional – PowerShell:** the same as a script, for example for a helpdesk report.
+10. More helpdesk questions, all method **GET**. Run each one and check the result against the Intune admin center:
+
+    - Which devices are not compliant?
+
+      ```text
+      https://graph.microsoft.com/v1.0/deviceManagement/managedDevices?$filter=complianceState eq 'noncompliant'&$select=deviceName,userPrincipalName,complianceState,lastSyncDateTime
+      ```
+
+    - Which devices have not checked in for a week? Replace the date with today minus seven days:
+
+      ```text
+      https://graph.microsoft.com/v1.0/deviceManagement/managedDevices?$filter=lastSyncDateTime le 2026-10-09T00:00:00Z&$select=deviceName,userPrincipalName,lastSyncDateTime
+      ```
+
+    - Which devices belong to the signed-in user – the first question when a user calls:
+
+      ```text
+      https://graph.microsoft.com/v1.0/me/managedDevices?$select=deviceName,operatingSystem,osVersion,complianceState,lastSyncDateTime
+      ```
+
+    - Which Windows devices are there, with model and serial number:
+
+      ```text
+      https://graph.microsoft.com/v1.0/deviceManagement/managedDevices?$filter=operatingSystem eq 'Windows'&$select=deviceName,model,serialNumber,osVersion
+      ```
+
+11. **Optional – PowerShell:** the same as a script, for example for a helpdesk report.
 
     ```powershell
     Install-Module Microsoft.Graph.DeviceManagement -Scope CurrentUser
@@ -61,6 +87,9 @@ lab:
 - [ ] One MDM error traced to its setting
 - [ ] Graph returns `CL3-yourname`
 - [ ] Sync triggered through Graph, `lastSyncDateTime` updated
+- [ ] At least two of the helpdesk queries run and checked against the Intune admin center
+
+**Note:** In Graph Explorer, **Code snippets** next to the response shows the PowerShell command for the same request – a quick way from a query to a script.
 
 **Note:** Graph Explorer and Microsoft Graph PowerShell ask for permissions (scopes) when you sign in. In this tenant the trainer has granted them in advance. Your Intune role still decides what you see and which actions you may run.
 

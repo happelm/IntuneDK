@@ -17,17 +17,17 @@ lab:
 
 ### Part A – Explore in Graph Explorer
 
-1. Graph Explorer (`https://aka.ms/ge`), signed in as `etcX` as in [Lab 9.2](LAB_09_2_mdm-events-and-microsoft-graph.html). List the discovered apps:
+1. Graph Explorer (`https://aka.ms/ge`), signed in as `etcX` as in [Lab 9.2](LAB_09_2_mdm-events-and-microsoft-graph.html). Method **GET** – list the discovered apps:
 
    ```text
-   GET https://graph.microsoft.com/v1.0/deviceManagement/detectedApps?$select=id,displayName,version,publisher,deviceCount
+   https://graph.microsoft.com/v1.0/deviceManagement/detectedApps?$select=id,displayName,version,publisher,deviceCount
    ```
 
 2. Find `Greenshot` and the entries for `Microsoft Visual C++` in the result – the apps from Lab 5.2. Every version is a separate entry with its own `deviceCount`.
-3. Copy the `id` of the Greenshot entry and list the devices that have it:
+3. Copy the `id` of the Greenshot entry and method **GET** – list the devices that have it (replace `{id}`):
 
    ```text
-   GET https://graph.microsoft.com/v1.0/deviceManagement/detectedApps/{id}/managedDevices?$select=deviceName,lastSyncDateTime
+   https://graph.microsoft.com/v1.0/deviceManagement/detectedApps/{id}/managedDevices?$select=deviceName,lastSyncDateTime
    ```
 
 4. Intune admin center → Apps → Monitor → **Discovered apps**: compare the device count for Greenshot with Graph.
