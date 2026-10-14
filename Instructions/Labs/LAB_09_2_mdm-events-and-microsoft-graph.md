@@ -61,10 +61,10 @@ lab:
       https://graph.microsoft.com/v1.0/deviceManagement/managedDevices?$filter=lastSyncDateTime le 2026-10-09T00:00:00Z&$select=deviceName,userPrincipalName,lastSyncDateTime
       ```
 
-    - Which devices belong to the signed-in user – the first question when a user calls:
+    - Which devices does a user have – the first question when a user calls. Replace `etcX` with the user:
 
       ```text
-      https://graph.microsoft.com/v1.0/me/managedDevices?$select=deviceName,operatingSystem,osVersion,complianceState,lastSyncDateTime
+      https://graph.microsoft.com/v1.0/deviceManagement/managedDevices?$filter=userPrincipalName eq 'etcX@mslablive.onmicrosoft.com'&$select=deviceName,operatingSystem,osVersion,complianceState,lastSyncDateTime
       ```
 
     - Which Windows devices are there, with model and serial number:
