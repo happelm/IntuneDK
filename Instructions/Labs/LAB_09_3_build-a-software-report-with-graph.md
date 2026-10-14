@@ -23,7 +23,13 @@ lab:
    https://graph.microsoft.com/v1.0/deviceManagement/detectedApps?$select=id,displayName,version,publisher,deviceCount
    ```
 
-2. Find `Greenshot` and the entries for `Microsoft Visual C++` in the result – the apps from Lab 5.2. Every version is a separate entry with its own `deviceCount`.
+2. Scroll to the top and the end of the response: `@odata.count` is the total, but the list stops after the first 1000 apps (sorted by name) and ends with `@odata.nextLink`. Graph returns large results in pages – the next page is the `nextLink` URL. Instead of paging, let Graph filter. Method **GET**:
+
+   ```text
+   https://graph.microsoft.com/v1.0/deviceManagement/detectedApps?$filter=contains(displayName,'Visual C')&$select=id,displayName,version,publisher,deviceCount
+   ```
+
+   Every version is a separate entry with its own `deviceCount`. Run the same query for `Greenshot` from Lab 5.2.
 3. Copy the `id` of the Greenshot entry and method **GET** – list the devices that have it (replace `{id}`):
 
    ```text
@@ -38,7 +44,7 @@ lab:
 6. Run it in PowerShell (not elevated) from the download folder. Confirm the prompts for the NuGet provider and the PowerShell Gallery with `Y`, sign in with `etcX` when asked.
 
    ```powershell
-   PowerShell.exe -ExecutionPolicy Bypass -File .\Get-SoftwareReport.ps1 -Name 'Visual C++' -OutFile 'C:\Temp\etcX-VCRedist.csv'
+   PowerShell.exe -ExecutionPolicy Bypass -File .\Get-SoftwareReport.ps1 -Name 'Visual C' -OutFile 'C:\Temp\etcX-VCRedist.csv'
    ```
 
 7. Open the CSV in Excel. Insert → PivotTable: rows `Version`, values count of `Device`. How many devices have which version?
@@ -51,5 +57,7 @@ lab:
 - [ ] CSV report created and pivoted by version in Excel
 
 **Note:** Discovered apps is inventory, not a live view: an app installed a few minutes ago can be missing. Discovered apps lists what is installed on the device, wherever it came from – the install status of an app you deploy is in the app itself (Apps → your app → Device install status).
+
+**Note:** Scripts never page by hand: `-All` in Microsoft Graph PowerShell follows every `nextLink`.
 
 **Note:** Your Intune role decides which devices you see – in this tenant you can read all lab devices, so the report covers every participant.

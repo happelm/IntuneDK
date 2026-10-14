@@ -17,7 +17,9 @@ if (-not (Get-Module -ListAvailable -Name Microsoft.Graph.DeviceManagement)) {
 Connect-MgGraph -Scopes 'DeviceManagementManagedDevices.Read.All' -NoWelcome
 
 # 1. All discovered apps whose name contains $Name - one entry per name and version
-$apps = Get-MgDeviceManagementDetectedApp -All | Where-Object DisplayName -like "*$Name*"
+#    Graph filters on the server, -All follows the paging (nextLink)
+$filter = "contains(displayName,'$($Name -replace "'", "''")')"
+$apps = Get-MgDeviceManagementDetectedApp -Filter $filter -All
 if (-not $apps) { Write-Warning "No discovered app matches '$Name'."; return }
 
 # 2. Summary: versions and device count
