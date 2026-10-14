@@ -96,4 +96,4 @@ Not for you: roles, scope tags, tenant settings, Conditional Access. Assignment 
 
 ## Known issues and feedback
 
-Known issues, workarounds and corrections are tracked in the [Issues](https://github.com/happelm/MDDMI-Doka/issues) tab. If something in a lab does not work as described, check the open issues first, then open a new one with the lab number and the step.
+Known issues, workarounds and corrections are tracked in the [Issues](https://github.com/happelm/IntuneDK/issues) tab. If something in a lab does not work as described, check the open issues first, then open a new one with the lab number and the step.

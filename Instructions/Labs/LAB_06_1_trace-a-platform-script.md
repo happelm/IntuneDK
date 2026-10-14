@@ -11,7 +11,7 @@ lab:
 
 **Goal:** Follow a platform script and a remediation from the assignment to the result on CL3.
 
-1. Intune admin center → Devices → Scripts and remediations → Platform scripts → Add → Windows 10 and later: platform script `etcX-Folder` with `createtestfolder.ps1` from the [Labfiles](https://github.com/happelm/MDDMI-Doka/tree/main/Labfiles), assigned to `studentXdevices`:
+1. Intune admin center → Devices → Scripts and remediations → Platform scripts → Add → Windows 10 and later: platform script `etcX-Folder` with `createtestfolder.ps1` from the [Labfiles](https://github.com/happelm/IntuneDK/tree/main/Labfiles), assigned to `studentXdevices`:
 
    | Setting | Value |
    |---|---|

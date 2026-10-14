@@ -1,9 +1,9 @@
 ---
-title: MDDMI-Doka Lab Instructions
+title: IntuneDK Lab Instructions
 permalink: index.html
 ---
 
-# MDDMI-Doka – Intune Operations and Troubleshooting
+# IntuneDK – Intune Operations and Troubleshooting
 
 Lab instructions for the three-day Intune operations and troubleshooting workshop, 2nd level focus. Use the copy button on every code block.
 
@@ -97,4 +97,4 @@ Not for you: roles, scope tags, tenant settings, Conditional Access. Assignment 
 
 - CMTrace for all .log files – from `\\dc1\labfiles` in Lab 2.1, deployed by Intune in Lab 5.1. Intune Management Extension logs in `C:\ProgramData\Microsoft\IntuneManagementExtension\Logs`
 - Intune admin center: intune.microsoft.com · Entra admin center: entra.microsoft.com
-- Lab files: [Labfiles folder in this repository](https://github.com/happelm/MDDMI-Doka/tree/main/Labfiles)
+- Lab files: [Labfiles folder in this repository](https://github.com/happelm/IntuneDK/tree/main/Labfiles)

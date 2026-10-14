@@ -21,7 +21,7 @@ lab:
    Set-Service -Name RemoteRegistry -StartupType Manual
    ```
 
-2. Download `Detect-RemoteRegistry.ps1` and `Remediate-RemoteRegistry.ps1` from the [Labfiles](https://github.com/happelm/MDDMI-Doka/tree/main/Labfiles) and read both: which exit code means compliant, which one starts the remediation?
+2. Download `Detect-RemoteRegistry.ps1` and `Remediate-RemoteRegistry.ps1` from the [Labfiles](https://github.com/happelm/IntuneDK/tree/main/Labfiles) and read both: which exit code means compliant, which one starts the remediation?
 3. Intune admin center → Devices → Scripts and remediations → Remediations → **Create script package**: `etcX-RemoteRegistry` with both scripts.
 
    | Setting | Value |

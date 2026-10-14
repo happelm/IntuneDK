@@ -11,7 +11,7 @@ lab:
 
 **Goal:** Follow one Win32 app from the assignment to **Installed** – in the log, the registry and the portal.
 
-1. Download `cmtrace.intunewin` from the [Labfiles](https://github.com/happelm/MDDMI-Doka/tree/main/Labfiles). The package already contains `cmtrace.exe`, `CmtraceInstall.ps1` and `CmtraceRemove.ps1`.
+1. Download `cmtrace.intunewin` from the [Labfiles](https://github.com/happelm/IntuneDK/tree/main/Labfiles). The package already contains `cmtrace.exe`, `CmtraceInstall.ps1` and `CmtraceRemove.ps1`.
 2. Intune admin center → Apps → Windows: add a **Windows app (Win32)** `etcX-CMTrace` from `cmtrace.intunewin` with these settings and assign it as **Required** to `studentXdevices`:
 
    | Setting | Value |

@@ -16,7 +16,7 @@ lab:
 **Why:** Intune has no repair action for Win32 apps. For a required app, Reinstall in the Company Portal does nothing while detection is positive, and Uninstall is not passed to the device. The lever that remains is the detection rule: remove what detection looks for, and the IME installs the app again.
 
 1. CL3: note the date of `C:\Windows\CMTrace.exe` – the detection file of `etcX-CMTrace` from Lab 5.1.
-2. Download `Detect-ReinstallCMTrace.ps1` and `Remediate-ReinstallCMTrace.ps1` from the [Labfiles](https://github.com/happelm/MDDMI-Doka/tree/main/Labfiles).
+2. Download `Detect-ReinstallCMTrace.ps1` and `Remediate-ReinstallCMTrace.ps1` from the [Labfiles](https://github.com/happelm/IntuneDK/tree/main/Labfiles).
 3. Intune admin center → Devices → Scripts and remediations → Remediations → **Create script package**: `etcX-Reinstall-CMTrace` with both scripts.
 
    | Setting | Value |

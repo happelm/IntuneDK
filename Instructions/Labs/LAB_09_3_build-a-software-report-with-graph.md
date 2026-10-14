@@ -34,7 +34,7 @@ lab:
 
 ### Part B – Report with PowerShell
 
-5. CL3: download `Get-SoftwareReport.ps1` from the [Labfiles](https://github.com/happelm/MDDMI-Doka/tree/main/Labfiles) and read it: which two Graph calls does it make, and which one runs once per app version?
+5. CL3: download `Get-SoftwareReport.ps1` from the [Labfiles](https://github.com/happelm/IntuneDK/tree/main/Labfiles) and read it: which two Graph calls does it make, and which one runs once per app version?
 6. Run it in PowerShell (not elevated) from the download folder. Confirm the prompts for the NuGet provider and the PowerShell Gallery with `Y`, sign in with `etcX` when asked.
 
    ```powershell
