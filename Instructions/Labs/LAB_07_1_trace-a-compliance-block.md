@@ -12,7 +12,7 @@ lab:
 **Goal:** Make CL3 noncompliant on purpose and see what the user sees – then repair it. The trainer shows the same block in the sign-in log.
 
 1. CL3: run `ver` and note the OS version.
-2. Intune admin center → Devices → Manage devices → Compliance → Create policy → Windows 10 and later: compliance policy `etcX-MinOS`, Device properties → Operating system version → **Minimum OS version** `10.0.99999.0`, assigned to `studentXusers`.
+2. Intune admin center → Devices → Manage devices → Compliance → Create policy → Windows 10 and later: compliance policy `etcX-MinOS`, Device properties → Operating system version → **Minimum OS version** `10.0.26500.0`, assigned to `studentXusers`.
 3. CL3: Company Portal → **Check access**. Wait until the device is noncompliant.
 4. Intune admin center → Devices → All devices → `CL3-yourname` → Device compliance: find `etcX-MinOS` and the failing setting.
 5. CL3: sign in to Microsoft Edge with `etcX` and open `office.com`. The trainer's Conditional Access policy blocks the noncompliant device.
