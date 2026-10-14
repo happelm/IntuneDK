@@ -33,21 +33,22 @@ lab:
 3. Copy the `id` of the Greenshot entry and method **GET** – list the devices that have it (replace `{id}`):
 
    ```text
-   https://graph.microsoft.com/v1.0/deviceManagement/detectedApps/{id}/managedDevices?$select=deviceName,lastSyncDateTime
+   https://graph.microsoft.com/v1.0/deviceManagement/detectedApps/{id}/managedDevices
    ```
 
+   Look at the result: only `id`, `deviceName` and `osVersion` are filled, dates show `0001-01-01`. The relationship returns a short reference to the device, not the device. For details, read the device itself with its `id` as in Lab 9.2 – the script does exactly that.
 4. Intune admin center → Apps → Monitor → **Discovered apps**: compare the device count for Greenshot with Graph.
 
 ### Part B – Report with PowerShell
 
-5. CL3: download `Get-SoftwareReport.ps1` from the [Labfiles](https://github.com/happelm/IntuneDK/tree/main/Labfiles) and read it: which two Graph calls does it make, and which one runs once per app version?
+5. CL3: download `Get-SoftwareReport.ps1` from the [Labfiles](https://github.com/happelm/IntuneDK/tree/main/Labfiles) and read it: which Graph calls does it make, which one runs once per app version, and why does it load all managed devices?
 6. Run it in PowerShell (not elevated) from the download folder. Confirm the prompts for the NuGet provider and the PowerShell Gallery with `Y`, sign in with `etcX` when asked.
 
    ```powershell
    PowerShell.exe -ExecutionPolicy Bypass -File .\Get-SoftwareReport.ps1 -Name 'Visual C' -OutFile 'C:\Temp\etcX-VCRedist.csv'
    ```
 
-7. Open the CSV in Excel. Insert → PivotTable: rows `Version`, values count of `Device`. How many devices have which version?
+7. Open the CSV in Excel. Check the `Status` column: a device that is no longer in Intune can still show up in the discovered apps. Then Insert → PivotTable: rows `Version`, values count of `Device`. How many devices have which version?
 8. Run the script once more for an app that matters in your own environment, for example a browser or a PDF reader.
 
 ### Checkpoint
