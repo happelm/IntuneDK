@@ -39,6 +39,7 @@ Device actions: Wipe, Retire, Fresh Start, Autopilot Reset. Diagnostic logs, MDM
 | 9.1 | [Device actions](Instructions/Labs/LAB_09_1_device-actions.md) (draft) | 20 min |
 | 9.2 | [MDM events and Microsoft Graph](Instructions/Labs/LAB_09_2_mdm-events-and-microsoft-graph.md) (draft) | 30 min |
 | 9.3 | [Build a software report with Graph](Instructions/Labs/LAB_09_3_build-a-software-report-with-graph.md) (draft) | 30 min |
+| 9.4 | [Visualize Graph data in a dashboard](Instructions/Labs/LAB_09_4_visualize-graph-data-in-a-dashboard.md) (draft, optional) | 15 min |
 
 ### Appendix
 
