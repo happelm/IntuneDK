@@ -11,5 +11,6 @@
 | `Detect-RemoteRegistry.ps1`, `Remediate-RemoteRegistry.ps1` | 6.2 | Remediation `etcX-RemoteRegistry`: keeps the Remote Registry service disabled |
 | `Get-SoftwareReport.ps1` | 9.3 | Graph report: versions and devices of a discovered app, exported to CSV |
 | `Get-IntuneDashboard.ps1` | 9.4 | Graph dashboard: compliance, operating systems, check-in age, Windows and app versions as charts in one HTML page |
+| `Get-EnrollmentDashboard.ps1` | – | Graph dashboard: Entra registration, Intune enrollment and last check-in per device, Autopilot phases if available |
 
 CMTrace for Lab 2.1 and the sources `Greenshot` and `VCRedist` for Lab 5.2 are on the classroom share `\\dc1\labfiles`. SyncML Viewer for Lab 4.1 is installed with `winget install syncmlviewer`.
