@@ -9,7 +9,6 @@ lab:
 
 **Estimated time:** 20 minutes, plus the reset of CL4 in the background
 
-> **Draft:** This lab is new and has not been run in this environment yet. If a step behaves differently, tell the trainer.
 
 > **Careful:** Your role reaches the lab devices of every participant. Check the device name twice before you click – a wipe cannot be undone.
 

@@ -9,7 +9,6 @@ lab:
 
 **Estimated time:** 25 minutes
 
-> **Draft:** This lab is new and has not been run in this environment yet. If a step behaves differently, tell the trainer.
 
 **Goal:** Give the helpdesk a way to reinstall a required Win32 app on one device – with a remediation that runs on demand.
 

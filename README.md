@@ -23,8 +23,8 @@ Replacing GPOs with configuration profiles, conflict resolution between Configur
 |---|---|---|
 | 4.1 | [Trace a policy to the registry](Instructions/Labs/LAB_04_1_trace-a-policy-to-the-registry.md) | 30 min |
 | 5.1 | [Trace a Win32 app](Instructions/Labs/LAB_05_1_trace-a-win32-app.md) | 45 min |
-| 5.2 | [Package an app with a dependency](Instructions/Labs/LAB_05_2_package-an-app-with-a-dependency.md) (draft) | 30 min |
-| 5.3 | [Force the reinstall of a required app](Instructions/Labs/LAB_05_3_force-the-reinstall-of-a-required-app.md) (draft) | 25 min |
+| 5.2 | [Package an app with a dependency](Instructions/Labs/LAB_05_2_package-an-app-with-a-dependency.md) | 30 min |
+| 5.3 | [Force the reinstall of a required app](Instructions/Labs/LAB_05_3_force-the-reinstall-of-a-required-app.md) | 25 min |
 
 ### Day 3 – Operations, troubleshooting, automation
 
@@ -33,13 +33,13 @@ Device actions: Wipe, Retire, Fresh Start, Autopilot Reset. Diagnostic logs, MDM
 | Lab | Title | Time |
 |---|---|---|
 | 6.1 | [Trace a platform script](Instructions/Labs/LAB_06_1_trace-a-platform-script.md) | 30 min |
-| 6.2 | [Turn a client problem into a remediation](Instructions/Labs/LAB_06_2_turn-a-client-problem-into-a-remediation.md) (draft) | 20 min |
+| 6.2 | [Turn a client problem into a remediation](Instructions/Labs/LAB_06_2_turn-a-client-problem-into-a-remediation.md) | 20 min |
 | 7.1 | [Trace a compliance block](Instructions/Labs/LAB_07_1_trace-a-compliance-block.md) | 30 min |
 | 8.1 | [Windows Hello and cloud Kerberos](Instructions/Labs/LAB_08_1_windows-hello-and-cloud-kerberos.md) | 45 min (optional) |
-| 9.1 | [Device actions](Instructions/Labs/LAB_09_1_device-actions.md) (draft) | 20 min |
-| 9.2 | [MDM events and Microsoft Graph](Instructions/Labs/LAB_09_2_mdm-events-and-microsoft-graph.md) (draft) | 30 min |
-| 9.3 | [Build a software report with Graph](Instructions/Labs/LAB_09_3_build-a-software-report-with-graph.md) (draft) | 30 min |
-| 9.4 | [Visualize Graph data in a dashboard](Instructions/Labs/LAB_09_4_visualize-graph-data-in-a-dashboard.md) (draft, optional) | 15 min |
+| 9.1 | [Device actions](Instructions/Labs/LAB_09_1_device-actions.md) | 20 min |
+| 9.2 | [MDM events and Microsoft Graph](Instructions/Labs/LAB_09_2_mdm-events-and-microsoft-graph.md) | 30 min |
+| 9.3 | [Build a software report with Graph](Instructions/Labs/LAB_09_3_build-a-software-report-with-graph.md) | 30 min |
+| 9.4 | [Visualize Graph data in a dashboard](Instructions/Labs/LAB_09_4_visualize-graph-data-in-a-dashboard.md) (optional) | 15 min |
 
 ### Appendix
 

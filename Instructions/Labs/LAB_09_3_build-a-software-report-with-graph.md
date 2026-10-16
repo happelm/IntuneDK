@@ -9,7 +9,6 @@ lab:
 
 **Estimated time:** 30 minutes
 
-> **Draft:** This lab is new and has not been run in this environment yet. If a step behaves differently, tell the trainer.
 
 **Goal:** Answer a typical helpdesk question with data from Intune: which versions of an app are installed, on how many devices, on which ones – as a CSV file for Excel.
 

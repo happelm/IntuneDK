@@ -9,7 +9,6 @@ lab:
 
 **Estimated time:** 15 minutes (optional)
 
-> **Draft:** This lab is new and has not been run in this environment yet. If a step behaves differently, tell the trainer.
 
 **Goal:** Turn the Graph queries from Lab 9.2 and 9.3 into charts – compliance, operating systems, check-in age, Windows versions and the versions of one app – on a single HTML page.
 

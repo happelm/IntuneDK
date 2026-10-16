@@ -9,7 +9,6 @@ lab:
 
 **Estimated time:** 20 minutes
 
-> **Draft:** This lab is new and has not been run in this environment yet. If a step behaves differently, tell the trainer.
 
 **Goal:** Detect and fix a client setting automatically – on a schedule and on demand – and read the result in the portal.
 
