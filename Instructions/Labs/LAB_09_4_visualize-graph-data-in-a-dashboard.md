@@ -9,7 +9,6 @@ lab:
 
 **Estimated time:** 15 minutes (optional)
 
-
 **Goal:** Turn the Graph queries from Lab 9.2 and 9.3 into charts – compliance, operating systems, check-in age, Windows versions and the versions of one app – on a single HTML page.
 
 **Why:** Graph Explorer shows JSON, not charts. A short script runs the same queries, counts the results and hands them to a chart library in the browser. No server, no Power BI, no extra module – one HTML file you can mail or open again later.

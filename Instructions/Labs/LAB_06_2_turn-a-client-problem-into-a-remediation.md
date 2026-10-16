@@ -9,7 +9,6 @@ lab:
 
 **Estimated time:** 20 minutes
 
-
 **Goal:** Detect and fix a client setting automatically – on a schedule and on demand – and read the result in the portal.
 
 **Why:** A configuration baseline in Configuration Manager with a script setting and remediation has no settings catalog equivalent. The Intune counterpart is a remediation: discovery script and compliance rule become the detection script, the remediation script stays, the evaluation schedule becomes the schedule of the assignment.

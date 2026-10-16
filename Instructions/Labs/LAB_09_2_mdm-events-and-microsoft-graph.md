@@ -9,7 +9,6 @@ lab:
 
 **Estimated time:** 30 minutes
 
-
 **Goal:** Find MDM errors on the device without scrolling through thousands of events, and read and sync your devices through Microsoft Graph instead of the portal.
 
 ### Part A – MDM events on the device

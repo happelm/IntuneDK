@@ -9,7 +9,6 @@ lab:
 
 **Estimated time:** 30 minutes
 
-
 **Goal:** Package Greenshot and its runtime yourself, deploy both as Win32 apps with a dependency and follow the order in the log.
 
 1. Download `IntuneWinAppUtil.exe` (GitHub: microsoft/Microsoft-Win32-Content-Prep-Tool) to CL3.

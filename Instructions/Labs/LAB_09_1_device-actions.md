@@ -9,7 +9,6 @@ lab:
 
 **Estimated time:** 20 minutes, plus the reset of CL4 in the background
 
-
 > **Careful:** Your role reaches the lab devices of every participant. Check the device name twice before you click – a wipe cannot be undone.
 
 **Goal:** Know which device action does what, and wipe and re-provision CL4 yourself.

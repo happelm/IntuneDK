@@ -9,7 +9,6 @@ lab:
 
 **Estimated time:** 30 minutes
 
-
 **Goal:** Answer a typical helpdesk question with data from Intune: which versions of an app are installed, on how many devices, on which ones – as a CSV file for Excel.
 
 **Why:** The Intune admin center shows the answer one app at a time (Apps → Monitor → Discovered apps). Graph gives you the same data for any app, filtered, combined and exported – the basis for every recurring report.

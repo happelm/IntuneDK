@@ -9,7 +9,6 @@ lab:
 
 **Estimated time:** 25 minutes
 
-
 **Goal:** Give the helpdesk a way to reinstall a required Win32 app on one device – with a remediation that runs on demand.
 
 **Why:** Intune has no repair action for Win32 apps. For a required app, Reinstall in the Company Portal does nothing while detection is positive, and Uninstall is not passed to the device. The lever that remains is the detection rule: remove what detection looks for, and the IME installs the app again.
