@@ -1,0 +1,145 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "metadata": {
+    "description": "Azure Automation account with a system-assigned managed identity and a daily runbook that mails the Intune enrollment report. Graph and Exchange permissions are granted afterwards with Grant-AutomationPermissions.ps1."
+  },
+  "parameters": {
+    "automationAccountName": {
+      "type": "string",
+      "defaultValue": "aa-intune-reports",
+      "metadata": { "description": "Name of the Automation account. The managed identity gets the same name in Entra ID." }
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": { "description": "Azure region" }
+    },
+    "sender": {
+      "type": "string",
+      "metadata": { "description": "Mailbox the report is sent from, e.g. a shared mailbox (reports@contoso.com)" }
+    },
+    "recipients": {
+      "type": "string",
+      "metadata": { "description": "Comma-separated recipient addresses" }
+    },
+    "days": {
+      "type": "int",
+      "defaultValue": 30,
+      "minValue": 1,
+      "maxValue": 365,
+      "metadata": { "description": "Time window of the report in days" }
+    },
+    "timeZone": {
+      "type": "string",
+      "defaultValue": "Europe/Vienna",
+      "metadata": { "description": "Time zone of the schedule" }
+    },
+    "startTime": {
+      "type": "string",
+      "defaultValue": "[dateTimeAdd(utcNow('u'), 'P1D', 'yyyy-MM-ddT04:00:00Z')]",
+      "metadata": { "description": "First run (UTC, must be in the future). Default: tomorrow 04:00 UTC = 06:00 in Vienna during summer time; the schedule then keeps the local time of the time zone." }
+    },
+    "runbookUri": {
+      "type": "string",
+      "defaultValue": "https://raw.githubusercontent.com/happelm/IntuneDK/main/Labfiles/Automation/Send-EnrollmentReport.ps1",
+      "metadata": { "description": "Public URL of the runbook script" }
+    },
+    "graphModuleUri": {
+      "type": "string",
+      "defaultValue": "https://www.powershellgallery.com/api/v2/package/Microsoft.Graph.Authentication",
+      "metadata": { "description": "PowerShell Gallery package of Microsoft.Graph.Authentication. Add /<version> to pin a version." }
+    }
+  },
+  "variables": {
+    "runbookName": "Send-EnrollmentReport",
+    "scheduleName": "Daily-EnrollmentReport"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Automation/automationAccounts",
+      "apiVersion": "2022-08-08",
+      "name": "[parameters('automationAccountName')]",
+      "location": "[parameters('location')]",
+      "identity": { "type": "SystemAssigned" },
+      "properties": {
+        "sku": { "name": "Basic" }
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/modules",
+      "apiVersion": "2022-08-08",
+      "name": "[format('{0}/{1}', parameters('automationAccountName'), 'Microsoft.Graph.Authentication')]",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccountName'))]"
+      ],
+      "properties": {
+        "contentLink": { "uri": "[parameters('graphModuleUri')]" }
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/runbooks",
+      "apiVersion": "2022-08-08",
+      "name": "[format('{0}/{1}', parameters('automationAccountName'), variables('runbookName'))]",
+      "location": "[parameters('location')]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccountName'))]"
+      ],
+      "properties": {
+        "runbookType": "PowerShell",
+        "description": "Daily Intune enrollment report (HTML with charts) by mail",
+        "logProgress": false,
+        "logVerbose": false,
+        "publishContentLink": {
+          "uri": "[parameters('runbookUri')]",
+          "version": "1.0.0.0"
+        }
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/schedules",
+      "apiVersion": "2022-08-08",
+      "name": "[format('{0}/{1}', parameters('automationAccountName'), variables('scheduleName'))]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccountName'))]"
+      ],
+      "properties": {
+        "description": "Every day",
+        "startTime": "[parameters('startTime')]",
+        "frequency": "Day",
+        "interval": 1,
+        "timeZone": "[parameters('timeZone')]"
+      }
+    },
+    {
+      "type": "Microsoft.Automation/automationAccounts/jobSchedules",
+      "apiVersion": "2022-08-08",
+      "name": "[format('{0}/{1}', parameters('automationAccountName'), guid(resourceGroup().id, parameters('automationAccountName'), variables('runbookName'), variables('scheduleName')))]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Automation/automationAccounts/runbooks', parameters('automationAccountName'), variables('runbookName'))]",
+        "[resourceId('Microsoft.Automation/automationAccounts/schedules', parameters('automationAccountName'), variables('scheduleName'))]",
+        "[resourceId('Microsoft.Automation/automationAccounts/modules', parameters('automationAccountName'), 'Microsoft.Graph.Authentication')]"
+      ],
+      "properties": {
+        "runbook": { "name": "[variables('runbookName')]" },
+        "schedule": { "name": "[variables('scheduleName')]" },
+        "parameters": {
+          "Sender": "[parameters('sender')]",
+          "Recipients": "[parameters('recipients')]",
+          "Days": "[string(parameters('days'))]"
+        }
+      }
+    }
+  ],
+  "outputs": {
+    "managedIdentityObjectId": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccountName')), '2022-08-08', 'full').identity.principalId]"
+    },
+    "nextStep": {
+      "type": "string",
+      "value": "[format('Run: .\\Grant-AutomationPermissions.ps1 -ManagedIdentityObjectId {0} -Sender {1}', reference(resourceId('Microsoft.Automation/automationAccounts', parameters('automationAccountName')), '2022-08-08', 'full').identity.principalId, parameters('sender'))]"
+    }
+  }
+}
